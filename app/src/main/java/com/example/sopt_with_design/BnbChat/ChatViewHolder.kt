@@ -1,5 +1,6 @@
 package com.example.sopt_with_design.BnbChat
 
+import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -19,10 +20,15 @@ class ChatViewHolder(view : View) : RecyclerView.ViewHolder(view){
     fun bind(data: ChatItem){
         profile_img.setImageResource(data.profile_img)
         if (data.type == 0) {// 내가 보낸거
-            text_lay.setBackgroundColor(0xEEF4F4)
+            text_lay.setBackgroundResource(R.drawable.message_to)
+            chat_content_txt.setTextColor(Color.parseColor("#FFFFFF"))
+            chat_date_txt.setTextColor(Color.parseColor("#FFFFFF"))
         }
         else{
-            text_lay.setBackgroundColor(0xF88F8F)
+            text_lay.setBackgroundResource(R.drawable.message_from)
+            chat_content_txt.setTextColor(Color.parseColor("#1C1C1C"))
+            chat_date_txt.setTextColor(Color.parseColor("#808080"))
+            chat_name_txt.setTextColor(Color.parseColor("#808080"))
         }
         chat_content_txt.text = data.content
         chat_name_txt.text = data.name
