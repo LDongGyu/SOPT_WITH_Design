@@ -50,7 +50,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_txt" />
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/solid"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addrs_txt"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="61dp"
         android:orientation="horizontal"
@@ -76,6 +89,27 @@
             android:background="@drawable/ic_camera"
             app:layout_constraintStart_toEndOf="@+id/gallery_imgBtn"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textMsg_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="12dp"
+            android:text="Text Message"
+            app:layout_constraintEnd_toStartOf="@+id/send_btn"
+            app:layout_constraintStart_toEndOf="@+id/camera_imgBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="26dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/ic_sendmessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,16 @@
 package com.example.sopt_with_design
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.LinearLayout.VERTICAL
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sopt_with_design.BnbList.BnbAdapter
 import com.example.sopt_with_design.BnbList.GetBnbData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         init()
+
+
+        button1.setOnClickListener {
+            var nextIntent = Intent(this, MessageActivity::class.java)
+            startActivity(nextIntent)
+        }
     }
 
     @SuppressLint("WrongConstant")
