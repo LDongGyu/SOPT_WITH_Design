@@ -77,11 +77,11 @@ class MessageActivity : AppCompatActivity() {
                 type = 1
             ),
             ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라 껍니다ㅏㅏㅏ",
-                name = "Bella Jane",
+                profile_img = R.drawable.blank,
+                content = "길게도 써보고 짧게도 써보고 무슨 말을 써야할지는 모르겠지만 대충 테스트 중이라는 이야기입니다. 날씨가 너무 춥네요. 따끈한 탕에 소주 한 잔 좋을거 같네요.",
+                name = "",
                 date = "Oct 10",
-                type = 1
+                type = 0
             ),
             ChatItem(
                 profile_img = R.drawable.profile_bella,
@@ -99,7 +99,7 @@ class MessageActivity : AppCompatActivity() {
             ),
             ChatItem(
                 profile_img = R.drawable.blank,
-                content = "5조합세 나이스",
+                content = "최강 합세 5조 화이팅",
                 name = "",
                 date = "Oct 10",
                 type = 0
