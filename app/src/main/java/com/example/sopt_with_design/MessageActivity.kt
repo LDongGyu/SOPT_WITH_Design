@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sopt_with_design.BnbChat.ChatAdapter
 import com.example.sopt_with_design.BnbChat.ChatItem
+import kotlinx.android.synthetic.main.activity_message.*
 
 class MessageActivity : AppCompatActivity() {
 
@@ -17,6 +18,9 @@ class MessageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_message)
 
         initChatList()
+        back_img.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initChatList(){
