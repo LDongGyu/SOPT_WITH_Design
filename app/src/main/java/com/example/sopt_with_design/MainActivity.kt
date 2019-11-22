@@ -6,6 +6,8 @@ import android.widget.LinearLayout.VERTICAL
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sopt_with_design.BnbList.BnbAdapter
+import com.example.sopt_with_design.BnbList.GetBnbData
 
 class MainActivity : AppCompatActivity() {
 

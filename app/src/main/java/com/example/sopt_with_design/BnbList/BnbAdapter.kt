@@ -1,9 +1,10 @@
-package com.example.sopt_with_design
+package com.example.sopt_with_design.BnbList
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sopt_with_design.R
 
 class BnbAdapter (private val context: Context) : RecyclerView.Adapter<BnbViewHolder>(){
 

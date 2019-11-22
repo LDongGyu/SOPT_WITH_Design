@@ -1,4 +1,4 @@
-package com.example.sopt_with_design
+package com.example.sopt_with_design.BnbList
 
 class GetBnbData {
     fun getBnbList() : List<BnbItem>{

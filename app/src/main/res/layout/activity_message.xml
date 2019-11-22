@@ -6,38 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MessageActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="136dp"
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="28dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="28dp"
-            android:layout_height="29dp"
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="61dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile_bella" />
+
+    <TextView
+        android:id="@+id/name_txt"
+        android:layout_width="56dp"
+        android:layout_height="13dp"
+        android:text="Bella Jane"
+        android:textSize="12sp"
+        android:layout_marginTop="9dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+    <TextView
+        android:id="@+id/addrs_txt"
+        android:layout_width="56dp"
+        android:layout_height="12dp"
+        android:text="Paris, France"
+        android:textSize="10sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_txt" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="27dp">
+
+        <ImageButton
+            android:id="@+id/gallery_imgBtn"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
             android:layout_marginLeft="13dp"
-            android:layout_marginTop="24dp"
-            app:srcCompat="@drawable/ic_back_arrow" />
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ic_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_gravity="center"
-            android:layout_width="61dp"
-            android:layout_height="62dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="24dp"
-            app:srcCompat="@drawable/profile_bella" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/textView3"-->
-<!--            android:layout_width="56dp"-->
-<!--            android:layout_height="13dp"-->
-<!--            android:gravity="center_horizontal"-->
-<!--            android:text="Bella Jane"-->
-<!--            android:layout_marginTop="95dp"-->
-<!--            android:layout_marginLeft="152dp"/>-->
-
-    </FrameLayout>
+        <ImageButton
+            android:id="@+id/camera_imgBtn"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/ic_camera"
+            app:layout_constraintStart_toEndOf="@+id/gallery_imgBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

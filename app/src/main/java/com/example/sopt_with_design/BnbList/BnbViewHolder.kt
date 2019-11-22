@@ -1,9 +1,10 @@
-package com.example.sopt_with_design
+package com.example.sopt_with_design.BnbList
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sopt_with_design.R
 
 class BnbViewHolder (view : View) : RecyclerView.ViewHolder(view){
     val ctnBnb : View = view.findViewById(R.id.ctnBnb)
