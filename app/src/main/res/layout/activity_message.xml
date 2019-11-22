@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MessageActivity">
+
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="28dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow" />
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="61dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile_bella" />
+
+    <TextView
+        android:id="@+id/name_txt"
+        android:layout_width="56dp"
+        android:layout_height="13dp"
+        android:text="Bella Jane"
+        android:textSize="12sp"
+        android:layout_marginTop="9dp"
+        android:gravity="center"
+        android:fontFamily="@font/nanumsquareeb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+    <TextView
+        android:id="@+id/addrs_txt"
+        android:layout_width="56dp"
+        android:layout_height="12dp"
+        android:text="Paris, France"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:fontFamily="@font/nanumsquarer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_txt" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.3dp"
+        android:background="#CCCCCC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addrs_txt"
+        app:layout_constraintBottom_toTopOf="@id/chat_list"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addrs_txt"
+        app:layout_constraintBottom_toTopOf="@id/trans_txt"/>
+
+    <TextView
+        android:id="@+id/trans_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="12dp"
+        android:text="Translate the message"
+        android:textSize="11sp"
+        android:textColor="#fe5b5f"
+        android:gravity="center"
+        android:fontFamily="@font/nanumsquareeb"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.3dp"
+        android:background="#CCCCCC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trans_txt"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/gallery_imgBtn"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ic_gallery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/camera_imgBtn"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/ic_camera"
+            app:layout_constraintStart_toEndOf="@+id/gallery_imgBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/chat_edit"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginBottom="20dp"
+            android:padding="0dp"
+            app:layout_constraintStart_toEndOf="@+id/camera_imgBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <EditText
+                android:id="@+id/textMsg_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="14dp"
+                android:textSize="12dp"
+                android:text="Text Message"
+                android:textColor="#cbcbcb"
+                android:includeFontPadding="false"
+                android:background="@null"
+                android:fontFamily="@font/nanumsquarer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/send_btn"/>
+
+            <ImageButton
+                android:id="@+id/send_btn"
+                android:layout_width="26dp"
+                android:layout_height="25dp"
+                android:includeFontPadding="false"
+                android:background="@drawable/ic_sendmessage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
