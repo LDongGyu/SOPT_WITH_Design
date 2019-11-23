@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/SOPT_WITH_Design-app.iml" filepath="$PROJECT_DIR$/app/SOPT_WITH_Design-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SOPT_WITH_Design-sopt_with_design.iml" filepath="$PROJECT_DIR$/SOPT_WITH_Design-sopt_with_design.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sopt_with_design.iml" filepath="$PROJECT_DIR$/sopt_with_design.iml" />
     </modules>
