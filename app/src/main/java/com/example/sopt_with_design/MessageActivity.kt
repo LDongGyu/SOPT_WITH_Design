@@ -21,6 +21,19 @@ class MessageActivity : AppCompatActivity() {
         back_img.setOnClickListener {
             finish()
         }
+
+        send_btn.setOnClickListener {
+            var newChat = ChatItem(
+                    profile_img = R.drawable.blank,
+                    content = textMsg_edit.text.toString(),
+                    name = "",
+                    date = "Oct 10",
+                    type = 0
+            )
+            chatListAdapter.data.add(newChat)
+            chatListAdapter.notifyDataSetChanged()
+            chatList.scrollToPosition(chatListAdapter.itemCount-1)
+        }
     }
 
     private fun initChatList(){
@@ -30,7 +43,7 @@ class MessageActivity : AppCompatActivity() {
         chatList.layoutManager = LinearLayoutManager(this)
         chatList.height
 
-        chatListAdapter.data = listOf(
+        chatListAdapter.data = mutableListOf(
             ChatItem(
                 profile_img = R.drawable.blank,
                 content = "제가 보낸 겁니당",

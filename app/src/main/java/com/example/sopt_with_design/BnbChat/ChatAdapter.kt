@@ -9,7 +9,7 @@ import com.example.sopt_with_design.R
 
 class ChatAdapter(private val context: Context) : RecyclerView.Adapter<ChatViewHolder>(){
 
-    var data = listOf<ChatItem>()
+    var data = mutableListOf<ChatItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.list_chat_item, parent, false)
