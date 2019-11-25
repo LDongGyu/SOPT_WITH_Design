@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.marginLeft
 import androidx.core.view.marginRight
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.sopt_with_design.R
 import kotlinx.android.synthetic.main.list_chat_item.view.*
 
@@ -20,13 +21,14 @@ class ChatViewHolder(view : View) : RecyclerView.ViewHolder(view){
     val chat_date_txt: TextView = view.findViewById(R.id.chat_date_txt)
 
     fun bind(data: ChatItem){
-        profile_img.setImageResource(data.profile_img)
         if (data.type == 0) {// 내가 보낸거
+            profile_img.setImageResource(R.drawable.blank)
             text_lay.setBackgroundResource(R.drawable.my_bln)
             chat_content_txt.setTextColor(Color.parseColor("#FFFFFF"))
             chat_date_txt.setTextColor(Color.parseColor("#FFFFFF"))
         }
         else{
+            Glide.with(itemView).load(data.profile_img).into(profile_img)
             text_lay.setBackgroundResource(R.drawable.other_bln)
             chat_content_txt.setTextColor(Color.parseColor("#1C1C1C"))
             chat_date_txt.setTextColor(Color.parseColor("#808080"))

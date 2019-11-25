@@ -2,11 +2,17 @@ package com.example.sopt_with_design
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sopt_with_design.BnbChat.ChatAdapter
+import com.example.sopt_with_design.BnbChat.ChatData
 import com.example.sopt_with_design.BnbChat.ChatItem
+import com.example.sopt_with_design.api.ChatServiceImpl
 import kotlinx.android.synthetic.main.activity_message.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MessageActivity : AppCompatActivity() {
 
@@ -43,86 +49,44 @@ class MessageActivity : AppCompatActivity() {
         chatList.layoutManager = LinearLayoutManager(this)
         chatList.height
 
-        chatListAdapter.data = mutableListOf(
-            ChatItem(
-                profile_img = R.drawable.blank,
-                content = "제가 보낸 겁니당",
-                name = "",
-                date = "Oct 10",
-                type = 0
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라 껍니다ㅏㅏㅏ",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라는 수다쟁이입니다",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라 껍니다ㅏㅏㅏ",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라는 수다쟁이입니다",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라 껍니다ㅏㅏㅏ",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라는 수다쟁이입니다",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.blank,
-                content = "길게도 써보고 짧게도 써보고 무슨 말을 써야할지는 모르겠지만 대충 테스트 중이라는 이야기입니다. 날씨가 너무 춥네요. 따끈한 탕에 소주 한 잔 좋을거 같네요.",
-                name = "",
-                date = "Oct 10",
-                type = 0
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "벨라는 수다쟁이입니다",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.profile_bella,
-                content = "취업 시켜주세요",
-                name = "Bella Jane",
-                date = "Oct 10",
-                type = 1
-            ),
-            ChatItem(
-                profile_img = R.drawable.blank,
-                content = "최강 합세 5조 화이팅",
-                name = "",
-                date = "Oct 10",
-                type = 0
-            )
-        )
+        val call: Call<ChatData> = ChatServiceImpl.service.getChatList()
+        call.enqueue(
+            object : Callback<ChatData>{
+                override fun onFailure(call: Call<ChatData>, t: Throwable) {
+                    Log.e("sopt_with_design","error : $t")
+                }
 
+                override fun onResponse(
+                    call: Call<ChatData>,
+                    response: Response<ChatData>
+                ) {
+                    if(response.isSuccessful){
+                        val charlist = response.body()!!
+                        
+                        chatListAdapter.data = charlist.data as MutableList<ChatItem>
+                        chatListAdapter.notifyDataSetChanged()
+                    }
+                }
+            }
+        )
         chatListAdapter.notifyDataSetChanged()
+
+
+//        chatListAdapter.data = mutableListOf(
+//            ChatItem(
+//                profile_img = R.drawable.blank,
+//                content = "제가 보낸 겁니당",
+//                name = "",
+//                date = "Oct 10",
+//                type = 0
+//            ),
+//            ChatItem(
+//                profile_img = R.drawable.profile_bella,
+//                content = "취업 시켜주세요",
+//                name = "Bella Jane",
+//                date = "Oct 10",
+//                type = 1
+//            )
+//        )
     }
 }
