@@ -24,7 +24,7 @@ data class recycler_data
     val region : String?,
     @SerializedName("image")
     val image: String?,
-    @SerializedName( "creditAt")
-    val creditAt : String?
+    @SerializedName( "createdAt")
+    val createdtAt : String?
 
 )

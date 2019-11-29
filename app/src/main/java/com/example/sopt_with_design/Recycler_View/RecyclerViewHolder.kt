@@ -17,7 +17,7 @@ class RecyclerViewHolder (itemView : View) : RecyclerView.ViewHolder (itemView){
     fun bind(data : recycler_data)
     {
         recyclerItemTitle.text = data.region
-        recycelerItemSubTitle.text = data.creditAt
+        recycelerItemSubTitle.text = data.createdtAt
         Glide.with(itemView)
             .load(data.image)
             .into(recyclerItemImg)
