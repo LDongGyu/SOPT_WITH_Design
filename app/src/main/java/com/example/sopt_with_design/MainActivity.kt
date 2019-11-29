@@ -53,8 +53,10 @@ class MainActivity : AppCompatActivity(){
                         var datas = response.body()!!.data
 
                         recyclerAdapter = RecyclerAdapter(datas)
+                        recyclerAdapter.notifyDataSetChanged()
                         rv_list.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL,false)
                         rv_list.adapter = recyclerAdapter
+
 
 
                     }

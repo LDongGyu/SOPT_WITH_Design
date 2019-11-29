@@ -10,24 +10,8 @@ import retrofit2.http.Path
 interface MainService {
     @GET(" /main/hotel/users/{userIdx}")
     fun getHotelDataList(
-        @Path("userIndx") userIdx : String
+        @Path("userIdx") userIdx : String
 
-    ): Call<MainData>
-
-    @GET("/main/play/users/{userIdx}")
-    fun getPlayDataList(
-        @Path ("userIndx") userIdx: String
-
-    ) :Call<MainData>
-
-    @GET("/main/adventure/users/{userIdx}")
-    fun getAdventureDataList(
-        @Path("userIndx") userIdx: String
-    ): Call<MainData>
-
-    @GET("/main/food/users/userIdx")
-    fun getFoodDataList(
-      //  @Path("userIndx") userIdx : String
     ): Call<MainData>
 
 
