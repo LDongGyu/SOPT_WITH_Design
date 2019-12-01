@@ -27,10 +27,9 @@ class MessageActivity : AppCompatActivity() {
         back_img.setOnClickListener {
             finish()
         }
-
         send_btn.setOnClickListener {
             var newChat = ChatItem(
-                    profile_img = R.drawable.blank,
+                    profile_img = "",
                     content = textMsg_edit.text.toString(),
                     name = "",
                     date = "Oct 10",
